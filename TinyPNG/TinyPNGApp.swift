@@ -20,6 +20,7 @@ struct TinyPNGApp: App {
                     NSWindow.allowsAutomaticWindowTabbing = false
                 }
         }
+        .commandsRemoved()
 
         Settings {
             SettingsView()
