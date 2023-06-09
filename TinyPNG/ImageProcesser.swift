@@ -49,7 +49,7 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
             .store(in: &self.cancellables)
 
         return .init { continuation in
-            guard FileManager.default.fileExists(atPath: tinyImage.localURL.path()) else {
+            guard FileManager.default.fileExists(atPath: tinyImage.localURL.path) else {
                 let error = NSError(domain: "cn.firestudio.tinypng", code: -1, userInfo: [
                     NSLocalizedDescriptionKey: "\(tinyImage.localURL) does not exists"
                 ])

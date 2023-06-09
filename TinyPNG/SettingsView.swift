@@ -21,7 +21,7 @@ struct SettingsView: View {
         Form {
             TextField("API Key", text: store.$token)
             LabeledContent("Quota") {
-                VStack {
+                VStack(alignment: .leading) {
                     ProgressView(value: Float(store.compressedCount), total: totalCount)
 
                     Text("You need process the png(s) to fetch/refresh the\ncompression count.")

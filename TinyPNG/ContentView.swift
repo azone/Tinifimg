@@ -309,7 +309,7 @@ struct ContentView: View {
                 try fm.moveItem(at: location, to: item.localURL)
                 try fm.removeItem(at: backupURL)
             } catch {
-                if fm.fileExists(atPath: backupURL.path()) {
+                if fm.fileExists(atPath: backupURL.path) {
                     try fm.moveItem(at: backupURL, to: item.localURL)
                 }
                 throw error
@@ -336,7 +336,7 @@ struct ContentView: View {
             let target = url
                 .appendingPathComponent("\(name)\(index > 0 ? "(\(index))" : "")")
                 .appendingPathExtension(ext)
-            if !fm.fileExists(atPath: target.path(), isDirectory: &isDir) || isDir.boolValue {
+            if !fm.fileExists(atPath: target.path, isDirectory: &isDir) || isDir.boolValue {
                 try fm.moveItem(at: location, to: target)
                 return target
             }
