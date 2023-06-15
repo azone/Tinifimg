@@ -84,6 +84,7 @@ struct StateColumn: View {
                         Image(systemName: "exclamationmark.triangle.fill")
                             .foregroundColor(.red)
                     }
+                    .help("Error occured")
                     .popover(item: $popoverErrorItem) { item in
                         if case .error(let error) = item.state {
                             Text("Error occurred: \(error?.localizedDescription ?? "Unknown")")
@@ -99,8 +100,9 @@ struct StateColumn: View {
                             await store.processPNGs([item])
                         }
                     } label: {
-                        Image(systemName: "arrow.counterclockwise")
+                        Image(systemName: "arrow.counterclockwise.circle.fill")
                     }
+                    .help("Re-process this image")
                 }
             }
         }

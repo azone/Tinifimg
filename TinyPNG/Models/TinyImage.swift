@@ -105,7 +105,6 @@ struct TinyPNGError: Decodable, LocalizedError {
     let error: String
     let message: String
 
-    var failureReason: String { error }
-
-    var errorDescription: String { message }
+    var failureReason: String? { error }
+    var errorDescription: String? { message }
 }
