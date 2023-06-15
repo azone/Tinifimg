@@ -10,7 +10,7 @@ import Combine
 
 
 final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownloadDelegate {
-    let store: SettingsStore
+    private let settings: SettingsStore = .shared
 
     let baseURL: URL = URL(string: "https://api.tinify.com").unsafelyUnwrapped
 
@@ -18,10 +18,6 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
     private var cancellables = Set<AnyCancellable>()
     private var downloadTask: URLSessionDownloadTask?
     private var responseData: Data = Data()
-
-    init(store: SettingsStore) {
-        self.store = store
-    }
 
     private lazy var requestForUpload: URLRequest = {
         let uploadURL = baseURL.appending(path: "shrink")
@@ -33,7 +29,7 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
     }()
 
     private func updateHeader(for request: inout URLRequest) {
-        let apiKey = "api:\(store.token)"
+        let apiKey = "api:\(settings.token)"
         let base64Key = apiKey.data(using: .utf8)?.base64EncodedString() ?? ""
         request.setValue("Basic \(base64Key)", forHTTPHeaderField: "Authorization")
     }
@@ -77,7 +73,7 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
             if let compressedCount = response.allHeaderFields["compression-count"] as? String,
                let count = Int(compressedCount) {
                 DispatchQueue.main.async {
-                    self.store.compressedCount = count
+                    self.settings.compressedCount = count
                 }
             }
             

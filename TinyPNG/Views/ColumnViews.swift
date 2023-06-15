@@ -46,6 +46,8 @@ struct NameColumn: View {
 struct StateColumn: View {
     @StateObject var item: TinyImage
 
+    @EnvironmentObject var store: DataStore
+
     let percentStyle: FloatingPointFormatStyle<Double>.Percent = .percent
         .precision(.fractionLength(2))
 
@@ -75,19 +77,29 @@ struct StateColumn: View {
                 }
                 .foregroundColor(.green)
             case .error:
-                Button {
-                    popoverErrorItem = item
-                } label: {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundColor(.red)
-                }
-                .popover(item: $popoverErrorItem) { item in
-                    if case .error(let error) = item.state {
-                        Text("Error occurred: \(error?.localizedDescription ?? "Unknown")")
-                            .padding()
-                    } else {
-                        Text("Unknown error occurred")
-                            .padding()
+                HStack {
+                    Button {
+                        popoverErrorItem = item
+                    } label: {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                            .foregroundColor(.red)
+                    }
+                    .popover(item: $popoverErrorItem) { item in
+                        if case .error(let error) = item.state {
+                            Text("Error occurred: \(error?.localizedDescription ?? "Unknown")")
+                                .padding()
+                        } else {
+                            Text("Unknown error occurred")
+                                .padding()
+                        }
+                    }
+
+                    Button {
+                        Task {
+                            await store.processPNGs([item])
+                        }
+                    } label: {
+                        Image(systemName: "arrow.counterclockwise")
                     }
                 }
             }

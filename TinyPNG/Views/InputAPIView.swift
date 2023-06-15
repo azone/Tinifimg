@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct InputAPIView: View {
-    @EnvironmentObject var setting: SettingsStore
+    @EnvironmentObject var settings: SettingsStore
 
     @State private var token: String = ""
 
@@ -29,13 +29,13 @@ struct InputAPIView: View {
 
             TextField("API Key", text: $token)
                 .onSubmit {
-                    setting.token = token
+                    settings.token = token
                 }
 
             HStack {
                 Spacer()
                 Button("Done") {
-                    setting.token = token
+                    settings.token = token
                 }
             }
         }

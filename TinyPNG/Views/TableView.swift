@@ -35,7 +35,7 @@ struct TableView: View {
         selectedItems
             .compactMap(\.targetURL)
     }
-    
+
     var body: some View {
         Table(selection: $selections, sortOrder: $sorter) {
             TableColumn("Image Name", value: \.imageName) {

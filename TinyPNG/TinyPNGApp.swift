@@ -9,14 +9,14 @@ import SwiftUI
 
 @main
 struct TinyPNGApp: App {
-    let settigns = SettingsStore()
-    let store = DataStore()
+    private let store = DataStore()
+    private let settings = SettingsStore.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(settings)
                 .environmentObject(store)
-                .environmentObject(settigns)
                 .onAppear {
                     // disable tabs
                     NSWindow.allowsAutomaticWindowTabbing = false
@@ -26,8 +26,8 @@ struct TinyPNGApp: App {
 
         Settings {
             SettingsView()
+                .environmentObject(settings)
                 .environmentObject(store)
-                .environmentObject(settigns)
         }
     }
 }
