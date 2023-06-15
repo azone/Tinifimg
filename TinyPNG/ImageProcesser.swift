@@ -17,6 +17,7 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
     private var continuation: AsyncStream<TinyImageState>.Continuation?
     private var cancellables = Set<AnyCancellable>()
     private var downloadTask: URLSessionDownloadTask?
+    private var responseData: Data = Data()
 
     init(store: SettingsStore) {
         self.store = store
@@ -47,6 +48,9 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
                 self?.continuation?.yield(.uploading($0))
             }
             .store(in: &self.cancellables)
+        DispatchQueue.main.async {
+            tinyImage.state = .waiting
+        }
 
         return .init { continuation in
             guard FileManager.default.fileExists(atPath: tinyImage.localURL.path) else {
@@ -77,7 +81,8 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
                 }
             }
             
-            if let location = response.allHeaderFields["Location"] as? String,
+            if 200..<300 ~= response.statusCode,
+               let location = response.allHeaderFields["Location"] as? String,
                let url = URL(string: location) {
                 downloadTask = session.downloadTask(with: .init(url: url))
                 downloadTask?.delegate = self
@@ -107,6 +112,19 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
         if let error {
             continuation?.yield(.error(error))
             continuation?.finish()
+        } else {
+            if task is URLSessionDataTask {
+                let decoder = JSONDecoder()
+                if let error = try? decoder.decode(TinyPNGError.self, from: responseData) {
+                    downloadTask?.cancel()
+                    continuation?.yield(.error(error))
+                    continuation?.finish()
+                }
+            }
         }
+    }
+
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        responseData.append(data)
     }
 }

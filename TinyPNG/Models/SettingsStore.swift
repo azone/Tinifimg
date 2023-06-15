@@ -13,4 +13,5 @@ final class SettingsStore: ObservableObject {
     @AppStorage("OVERRIDE_ORIGINAL") var override: Bool = true
     @AppStorage("DIRECTORY_TO_SAVE") var directoryToSave: URL?
     @AppStorage("COMPRESSED_COUNT") var compressedCount: Int = 0
+    @AppStorage("AUTO_PROCESSING") var autoProcessing: Bool = true
 }
