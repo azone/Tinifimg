@@ -44,11 +44,9 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
                 self?.continuation?.yield(.uploading($0))
             }
             .store(in: &self.cancellables)
-        DispatchQueue.main.async {
-            tinyImage.state = .waiting
-        }
 
         return .init { continuation in
+            continuation.yield(.waiting)
             guard FileManager.default.fileExists(atPath: tinyImage.localURL.path) else {
                 let error = NSError(domain: "cn.firestudio.tinypng", code: -1, userInfo: [
                     NSLocalizedDescriptionKey: "\(tinyImage.localURL) does not exists"
