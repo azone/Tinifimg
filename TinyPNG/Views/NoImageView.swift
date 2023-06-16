@@ -11,7 +11,7 @@ import SwiftUI
 struct NoImageView: View {
     @Binding private var isDropTarget: Bool
     private var onFileSelection: ([URL]) -> Void
-    @State private var showPngsPicker: Bool = false
+    @State private var showImagesPicker: Bool = false
 
     init(isDropTarget: Binding<Bool>, onFileSelection: @escaping ([URL]) -> Void) {
         self._isDropTarget = isDropTarget
@@ -23,7 +23,7 @@ struct NoImageView: View {
             VStack(spacing: 20) {
                 Image(systemName: "photo")
                     .imageScale(.large)
-                Text("Please drag PNGs here!")
+                Text("Please drag images(png, jpeg or png) here!")
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -36,13 +36,13 @@ struct NoImageView: View {
                     style: .init(lineWidth: 4, dash: [6], dashPhase: 0)
                 )
         }
-        .fileImporter(isPresented: $showPngsPicker, allowedContentTypes: allowedTypes, allowsMultipleSelection: true) { results in
+        .fileImporter(isPresented: $showImagesPicker, allowedContentTypes: allowedTypes, allowsMultipleSelection: true) { results in
             do {
                 onFileSelection(try results.get())
             } catch {}
         }
         .onTapGesture {
-            showPngsPicker = true
+            showImagesPicker = true
         }
     }
 }

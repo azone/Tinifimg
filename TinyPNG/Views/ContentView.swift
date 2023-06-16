@@ -17,16 +17,17 @@ struct ContentView: View {
     @EnvironmentObject var store: DataStore
 
     @State private var isDropTarget = false
+    @State private var selections = Set<TinyImage.ID>()
 
     var importedURLs: Set<TinyImage.ID> {
-        Set(store.pngs.map(\.id))
+        Set(store.images.map(\.id))
     }
 
     @Environment(\.openURL) private var openURL
 
     var body: some View {
         ZStack {
-            if store.pngs.isEmpty {
+            if store.images.isEmpty {
                 NoImageView(isDropTarget: $isDropTarget) { urls in
                     var imageURLs: [URL] = []
                     for url in urls {
@@ -40,19 +41,19 @@ struct ContentView: View {
                     let tinyImages: [TinyImage] = imageURLs
                         .filter { !importedURLs.contains($0) }
                         .map(TinyImage.init(url:))
-                    store.pngs += tinyImages
+                    store.images += tinyImages
                     if settings.autoProcessing {
                         Task {
-                            await store.processPNGs(tinyImages)
+                            await store.processImages(tinyImages)
                         }
                     }
                 }
             } else {
-                TableView()
+                TableView(selections: $selections)
             }
         }
         .frame(minWidth: 500, minHeight: 300)
-        .padding(store.pngs.isEmpty ? .all : [])
+        .padding(store.images.isEmpty ? .all : [])
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onDrop(of: allowedTypes, isTargeted: $isDropTarget) { providers in
             handleDrop(providers)
@@ -77,9 +78,9 @@ struct ContentView: View {
                 let tinyImages = urls
                     .filter { !importedURLs.contains($0) }
                     .map(TinyImage.init(url:))
-                store.pngs += tinyImages
+                store.images += tinyImages
                 if settings.autoProcessing {
-                    await store.processPNGs(tinyImages)
+                    await store.processImages(tinyImages)
                 }
             }
         }
@@ -149,26 +150,34 @@ struct ContentView: View {
         ToolbarItem {
             ControlGroup {
                 Button {
-                    store.pngs.removeAll()
+                    store.images.removeAll()
                 } label: {
                     Label("Clear", systemImage: "paintbrush")
                 }
                 .help("Clear the list")
-                .disabled(store.pngs.isEmpty)
+                .disabled(store.images.isEmpty)
 
-                if !settings.autoProcessing {
-                    Button {
-                        Task {
-                            await store.processPNGs(
-                                store.pngs.filter(\.needProcess)
+                Button {
+                    Task {
+                        if selections.isEmpty {
+                            await store.processImages(
+                                store.images.filter(\.needProcess)
+                            )
+                        } else {
+                            await store.processImages(
+                                store.images.filter { selections.contains($0.id) }
                             )
                         }
-                    } label: {
-                        Label("Optimize", systemImage: "checkmark.seal")
                     }
-                    .help("Optimize pngs via TinyPNG")
-                    .disabled(store.pngs.isEmpty)
+                } label: {
+                    Label("Optimize", systemImage: "checkmark.seal")
                 }
+                .help("Optimize or reoptimize images via TinyPNG API")
+                .disabled(
+                    (!store.needProcessImages ||
+                    settings.autoProcessing) &&
+                    selections.isEmpty
+                )
 
                 Button {
                     NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)

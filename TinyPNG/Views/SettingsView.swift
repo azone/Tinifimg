@@ -29,7 +29,7 @@ struct SettingsView: View {
                 }
             }
             .help("\(settings.compressedCount) / \(Int(totalCount))(for free account)")
-            Toggle("Auto-processing pngs", isOn: settings.$autoProcessing)
+            Toggle("Auto-processing images", isOn: settings.$autoProcessing)
             if !settings.override {
                 Group {
                     LabeledContent("Directory to save") {
@@ -39,7 +39,7 @@ struct SettingsView: View {
                             Label(directoryName ?? "Select directory to save", systemImage: "folder")
                         }
                     }
-                    Text("Will save the optimized PNGs to this directory.")
+                    Text("Will save the optimized images to this directory.")
                         .font(.footnote)
                 }
             }

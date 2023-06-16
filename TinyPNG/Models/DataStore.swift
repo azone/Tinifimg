@@ -8,24 +8,28 @@
 import Foundation
 
 final class DataStore: ObservableObject {
-    @Published var pngs: [TinyImage] = []
+    @Published var images: [TinyImage] = []
+
+    var needProcessImages: Bool {
+        images.contains(where: \.needProcess)
+    }
 
     private let settings: SettingsStore = .shared
 
-    func processPNGs(_ pngs: [TinyImage]) async {
+    func processImages(_ images: [TinyImage]) async {
         await withTaskGroup(of: Void.self) { group in
             let urlSession = URLSession.shared
-            for png in pngs {
+            for image in images {
                 group.addTask(priority: .background) {
-                    for await state in ImageProcesser().process(png, with: urlSession) {
-                        await self.handlePNGStateChange(png, state: state)
+                    for await state in ImageProcesser().process(image, with: urlSession) {
+                        await self.handleImageStateChange(image, state: state)
                     }
                 }
             }
         }
     }
 
-    private func handlePNGStateChange(_ png: TinyImage, state: TinyImageState) async {
+    private func handleImageStateChange(_ image: TinyImage, state: TinyImageState) async {
         let optimizedSize: UInt64?
         let moveFileError: Error?
         let targetURL: URL?
@@ -33,7 +37,7 @@ final class DataStore: ObservableObject {
             let values = try? location.resourceValues(forKeys: [.fileSizeKey])
             optimizedSize = UInt64(values?.fileSize ?? 0)
             do {
-                targetURL = try await moveDownloadedImage(location, for: png)
+                targetURL = try await moveDownloadedImage(location, for: image)
                 moveFileError = nil
             } catch {
                 moveFileError = error
@@ -47,13 +51,13 @@ final class DataStore: ObservableObject {
 
         await MainActor.run {
             if let moveFileError {
-                png.state = .error(moveFileError)
+                image.state = .error(moveFileError)
             } else {
                 if let optimizedSize {
-                    png.targetURL = targetURL
-                    png.optimizedSize = optimizedSize
+                    image.targetURL = targetURL
+                    image.optimizedSize = optimizedSize
                 }
-                png.state = state
+                image.state = state
             }
         }
     }

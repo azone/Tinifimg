@@ -10,22 +10,22 @@ import SwiftUI
 import QuickLookThumbnailing
 
 struct NameColumn: View {
-    @StateObject var png: TinyImage
+    @StateObject var item: TinyImage
 
     @Environment(\.displayScale) var displayScale
 
     var body: some View {
         HStack {
-            if let thumbnail = png.thumbnail {
+            if let thumbnail = item.thumbnail {
                 Image(nsImage: thumbnail)
                     .scaledToFit()
                     .frame(width: 32, height: 32)
             }
-            Text(verbatim: png.imageName)
+            Text(verbatim: item.imageName)
         }
         .task(priority: .background) {
-            if png.thumbnail == nil {
-                await loadThumbnail(for: png)
+            if item.thumbnail == nil {
+                await loadThumbnail(for: item)
             }
         }
     }
@@ -97,7 +97,7 @@ struct StateColumn: View {
 
                     Button {
                         Task {
-                            await store.processPNGs([item])
+                            await store.processImages([item])
                         }
                     } label: {
                         Image(systemName: "arrow.counterclockwise.circle.fill")

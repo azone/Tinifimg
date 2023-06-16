@@ -14,7 +14,7 @@ struct TableView: View {
     @EnvironmentObject var store: DataStore
 
     @State private var sorter = [KeyPathComparator(\TinyImage.imageName)]
-    @State private var selections = Set<TinyImage.ID>()
+    @Binding private var selections: Set<TinyImage.ID>
     @State private var quickLookURL: URL?
 
     private var selectedItems: [TinyImage] {
@@ -22,7 +22,7 @@ struct TableView: View {
             return []
         }
 
-        return store.pngs.filter {
+        return store.images.filter {
             selections.contains($0.id)
         }
     }
@@ -36,10 +36,14 @@ struct TableView: View {
             .compactMap(\.targetURL)
     }
 
+    init(selections: Binding<Set<TinyImage.ID>>) {
+        _selections = selections
+    }
+
     var body: some View {
         Table(selection: $selections, sortOrder: $sorter) {
             TableColumn("Image Name", value: \.imageName) {
-                NameColumn(png: $0)
+                NameColumn(item: $0)
             }
 
             TableColumn("Size", value: \.fileSize) { item in
@@ -54,7 +58,7 @@ struct TableView: View {
                 StateColumn(item: item)
             }
         } rows: {
-            ForEach(store.pngs) { row in
+            ForEach(store.images) { row in
                 TableRow(row)
                     .itemProvider {
                         return row.targetURL.flatMap(NSItemProvider.init(contentsOf:))
@@ -62,10 +66,10 @@ struct TableView: View {
             }
         }
         .onChange(of: sorter) {
-            store.pngs.sort(using: $0)
+            store.images.sort(using: $0)
         }
         .onDeleteCommand {
-            store.pngs.removeAll { selections.contains($0.id) }
+            store.images.removeAll { selections.contains($0.id) }
         }
         .onCopyCommand {
             selectedItems
@@ -75,7 +79,7 @@ struct TableView: View {
         .contextMenu(forSelectionType: TinyImage.ID.self) { _ in
             buildContextMenu()
         } primaryAction: { selections in
-            let files = store.pngs.filter {
+            let files = store.images.filter {
                 selections.contains($0.id)
             }.map {
                 $0.targetURL ?? $0.localURL
@@ -110,7 +114,7 @@ struct TableView: View {
             .keyboardShortcut("c")
 
             Button {
-                store.pngs.removeAll {
+                store.images.removeAll {
                     selections.contains($0.id)
                 }
             } label: {
