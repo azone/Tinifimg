@@ -172,7 +172,7 @@ struct ContentView: View {
                 } label: {
                     Label("Optimize", systemImage: "checkmark.seal")
                 }
-                .help("Optimize or reoptimize images via TinyPNG API")
+                .help("Optimise or re-optimize images using the TinyPNG API")
                 .disabled(
                     (!store.needProcessImages ||
                     settings.autoProcessing) &&

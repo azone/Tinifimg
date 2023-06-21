@@ -30,16 +30,16 @@ struct NameColumn: View {
         }
     }
 
-    private func loadThumbnail(for png: TinyImage) async {
+    private func loadThumbnail(for image: TinyImage) async {
         let request = QLThumbnailGenerator.Request(
-            fileAt: png.localURL,
+            fileAt: image.localURL,
             size: .init(width: 32, height: 32),
             scale: displayScale,
             representationTypes: [.thumbnail]
         )
         let generator = QLThumbnailGenerator.shared
         let thumbnail = try? await generator.generateBestRepresentation(for: request)
-        png.thumbnail = thumbnail?.nsImage
+        image.thumbnail = thumbnail?.nsImage
     }
 }
 

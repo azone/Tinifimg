@@ -24,7 +24,7 @@ struct SettingsView: View {
                 VStack(alignment: .leading) {
                     ProgressView(value: Float(settings.compressedCount), total: totalCount)
 
-                    Text("You need process the png(s) to fetch/refresh the\ncompression count.")
+                    Text("You need to process the image(s) to fetch/refresh the\ncompression count.")
                         .font(.footnote)
                 }
             }
