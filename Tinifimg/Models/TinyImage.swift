@@ -1,6 +1,6 @@
 //
 //  TinyImage.swift
-//  TinyPNG
+//  Tinifimg
 //
 //  Created by Logan Wang on 2023/6/7.
 //

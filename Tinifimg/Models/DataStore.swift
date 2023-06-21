@@ -65,7 +65,7 @@ final class DataStore: ObservableObject {
     private func moveDownloadedImage(_ location: URL, for item: TinyImage) async throws -> URL? {
         let fm = FileManager.default
         guard fm.fileExists(atPath: location.path) else {
-            let error = NSError(domain: "cn.firestudio.tinypng", code: -1, userInfo: [
+            let error = NSError(domain: "cn.firestudio.tinifimg", code: -1, userInfo: [
                 NSLocalizedDescriptionKey: "\(location) does not exists"
             ])
             throw error
@@ -87,7 +87,7 @@ final class DataStore: ObservableObject {
         }
 
         guard let url = settings.directoryToSave else {
-            let error = NSError(domain: "cn.firestudio.tinypng", code: -1, userInfo: [
+            let error = NSError(domain: "cn.firestudio.tinifimg", code: -1, userInfo: [
                 NSLocalizedDescriptionKey: "Directory not spcefied."
             ])
             throw error

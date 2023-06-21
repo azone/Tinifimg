@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  TinyPNG
+//  Tinifimg
 //
 //  Created by Logan Wang on 2023/5/30.
 //
@@ -199,6 +199,8 @@ extension NSItemProvider {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(SettingsStore.shared)
+            .environmentObject(DataStore())
     }
 }
 

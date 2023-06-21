@@ -1,6 +1,6 @@
 //
-//  TinyPNGApp.swift
-//  TinyPNG
+//  TinifimgApp.swift
+//  Tinifimg
 //
 //  Created by Logan Wang on 2023/5/30.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct TinyPNGApp: App {
+struct TinifimgApp: App {
     private let store = DataStore()
     private let settings = SettingsStore.shared
 

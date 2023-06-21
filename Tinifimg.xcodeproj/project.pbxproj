@@ -7,38 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		403000172A25E7E0001DE935 /* TinyPNGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403000162A25E7E0001DE935 /* TinyPNGApp.swift */; };
-		403000192A25E7E0001DE935 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403000182A25E7E0001DE935 /* ContentView.swift */; };
-		4030001B2A25E7E2001DE935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4030001A2A25E7E2001DE935 /* Assets.xcassets */; };
-		4030001E2A25E7E2001DE935 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4030001D2A25E7E2001DE935 /* Preview Assets.xcassets */; };
-		403000262A25E82D001DE935 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403000252A25E82D001DE935 /* SettingsView.swift */; };
-		403000282A25E97B001DE935 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403000272A25E97B001DE935 /* SettingsStore.swift */; };
-		4030002A2A25F8D8001DE935 /* ImageProcesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403000292A25F8D8001DE935 /* ImageProcesser.swift */; };
-		4061CAE72A30680C00890AD0 /* TinyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4061CAE62A30680C00890AD0 /* TinyImage.swift */; };
-		4093B6762A3AE1A3004AE851 /* NoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093B6752A3AE1A3004AE851 /* NoImageView.swift */; };
-		4093B6782A3AEA32004AE851 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093B6772A3AEA32004AE851 /* TableView.swift */; };
-		4093B67A2A3AEC29004AE851 /* ColumnViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093B6792A3AEC29004AE851 /* ColumnViews.swift */; };
-		4093B67C2A3AF814004AE851 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093B67B2A3AF814004AE851 /* DataStore.swift */; };
-		4093B67E2A3AFC51004AE851 /* InputAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4093B67D2A3AFC51004AE851 /* InputAPIView.swift */; };
+		40FDA6112A42C8A500C0C45F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40FDA5FF2A42C8A500C0C45F /* Assets.xcassets */; };
+		40FDA6122A42C8A500C0C45F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6012A42C8A500C0C45F /* DataStore.swift */; };
+		40FDA6132A42C8A500C0C45F /* TinyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6022A42C8A500C0C45F /* TinyImage.swift */; };
+		40FDA6142A42C8A500C0C45F /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6032A42C8A500C0C45F /* SettingsStore.swift */; };
+		40FDA6152A42C8A500C0C45F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40FDA6052A42C8A500C0C45F /* Preview Assets.xcassets */; };
+		40FDA6162A42C8A500C0C45F /* TinifimgApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6072A42C8A500C0C45F /* TinifimgApp.swift */; };
+		40FDA6172A42C8A500C0C45F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6092A42C8A500C0C45F /* SettingsView.swift */; };
+		40FDA6182A42C8A500C0C45F /* ColumnViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA60A2A42C8A500C0C45F /* ColumnViews.swift */; };
+		40FDA6192A42C8A500C0C45F /* NoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA60B2A42C8A500C0C45F /* NoImageView.swift */; };
+		40FDA61A2A42C8A500C0C45F /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA60C2A42C8A500C0C45F /* TableView.swift */; };
+		40FDA61B2A42C8A500C0C45F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA60D2A42C8A500C0C45F /* ContentView.swift */; };
+		40FDA61C2A42C8A500C0C45F /* InputAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA60E2A42C8A500C0C45F /* InputAPIView.swift */; };
+		40FDA61D2A42C8A500C0C45F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40FDA60F2A42C8A500C0C45F /* Info.plist */; };
+		40FDA61E2A42C8A500C0C45F /* ImageProcesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6102A42C8A500C0C45F /* ImageProcesser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		403000132A25E7E0001DE935 /* TinyPNG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyPNG.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		403000162A25E7E0001DE935 /* TinyPNGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyPNGApp.swift; sourceTree = "<group>"; };
-		403000182A25E7E0001DE935 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4030001A2A25E7E2001DE935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4030001D2A25E7E2001DE935 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4030001F2A25E7E2001DE935 /* TinyPNG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TinyPNG.entitlements; sourceTree = "<group>"; };
-		403000252A25E82D001DE935 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		403000272A25E97B001DE935 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
-		403000292A25F8D8001DE935 /* ImageProcesser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcesser.swift; sourceTree = "<group>"; };
-		4061CAE62A30680C00890AD0 /* TinyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyImage.swift; sourceTree = "<group>"; };
-		4061CAE82A309CC100890AD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4093B6752A3AE1A3004AE851 /* NoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageView.swift; sourceTree = "<group>"; };
-		4093B6772A3AEA32004AE851 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		4093B6792A3AEC29004AE851 /* ColumnViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnViews.swift; sourceTree = "<group>"; };
-		4093B67B2A3AF814004AE851 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		4093B67D2A3AFC51004AE851 /* InputAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAPIView.swift; sourceTree = "<group>"; };
+		403000132A25E7E0001DE935 /* Tinifimg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinifimg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40FDA5FF2A42C8A500C0C45F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40FDA6012A42C8A500C0C45F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		40FDA6022A42C8A500C0C45F /* TinyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyImage.swift; sourceTree = "<group>"; };
+		40FDA6032A42C8A500C0C45F /* SettingsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		40FDA6052A42C8A500C0C45F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		40FDA6062A42C8A500C0C45F /* Tinifimg.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Tinifimg.entitlements; sourceTree = "<group>"; };
+		40FDA6072A42C8A500C0C45F /* TinifimgApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinifimgApp.swift; sourceTree = "<group>"; };
+		40FDA6092A42C8A500C0C45F /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		40FDA60A2A42C8A500C0C45F /* ColumnViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnViews.swift; sourceTree = "<group>"; };
+		40FDA60B2A42C8A500C0C45F /* NoImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoImageView.swift; sourceTree = "<group>"; };
+		40FDA60C2A42C8A500C0C45F /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		40FDA60D2A42C8A500C0C45F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		40FDA60E2A42C8A500C0C45F /* InputAPIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAPIView.swift; sourceTree = "<group>"; };
+		40FDA60F2A42C8A500C0C45F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40FDA6102A42C8A500C0C45F /* ImageProcesser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcesser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +56,7 @@
 		4030000A2A25E7E0001DE935 = {
 			isa = PBXGroup;
 			children = (
-				403000152A25E7E0001DE935 /* TinyPNG */,
+				40FDA5FE2A42C8A500C0C45F /* Tinifimg */,
 				403000142A25E7E0001DE935 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,53 +64,53 @@
 		403000142A25E7E0001DE935 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				403000132A25E7E0001DE935 /* TinyPNG.app */,
+				403000132A25E7E0001DE935 /* Tinifimg.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		403000152A25E7E0001DE935 /* TinyPNG */ = {
+		40FDA5FE2A42C8A500C0C45F /* Tinifimg */ = {
 			isa = PBXGroup;
 			children = (
-				4093B6732A3AE103004AE851 /* Views */,
-				4061CAE82A309CC100890AD0 /* Info.plist */,
-				4061CAE52A3067EF00890AD0 /* Models */,
-				403000292A25F8D8001DE935 /* ImageProcesser.swift */,
-				403000162A25E7E0001DE935 /* TinyPNGApp.swift */,
-				4030001A2A25E7E2001DE935 /* Assets.xcassets */,
-				4030001F2A25E7E2001DE935 /* TinyPNG.entitlements */,
-				4030001C2A25E7E2001DE935 /* Preview Content */,
+				40FDA5FF2A42C8A500C0C45F /* Assets.xcassets */,
+				40FDA6002A42C8A500C0C45F /* Models */,
+				40FDA6042A42C8A500C0C45F /* Preview Content */,
+				40FDA6062A42C8A500C0C45F /* Tinifimg.entitlements */,
+				40FDA6072A42C8A500C0C45F /* TinifimgApp.swift */,
+				40FDA6082A42C8A500C0C45F /* Views */,
+				40FDA60F2A42C8A500C0C45F /* Info.plist */,
+				40FDA6102A42C8A500C0C45F /* ImageProcesser.swift */,
 			);
-			path = TinyPNG;
+			path = Tinifimg;
 			sourceTree = "<group>";
 		};
-		4030001C2A25E7E2001DE935 /* Preview Content */ = {
+		40FDA6002A42C8A500C0C45F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4030001D2A25E7E2001DE935 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4061CAE52A3067EF00890AD0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				403000272A25E97B001DE935 /* SettingsStore.swift */,
-				4061CAE62A30680C00890AD0 /* TinyImage.swift */,
-				4093B67B2A3AF814004AE851 /* DataStore.swift */,
+				40FDA6012A42C8A500C0C45F /* DataStore.swift */,
+				40FDA6022A42C8A500C0C45F /* TinyImage.swift */,
+				40FDA6032A42C8A500C0C45F /* SettingsStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		4093B6732A3AE103004AE851 /* Views */ = {
+		40FDA6042A42C8A500C0C45F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				403000182A25E7E0001DE935 /* ContentView.swift */,
-				403000252A25E82D001DE935 /* SettingsView.swift */,
-				4093B6752A3AE1A3004AE851 /* NoImageView.swift */,
-				4093B6772A3AEA32004AE851 /* TableView.swift */,
-				4093B6792A3AEC29004AE851 /* ColumnViews.swift */,
-				4093B67D2A3AFC51004AE851 /* InputAPIView.swift */,
+				40FDA6052A42C8A500C0C45F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		40FDA6082A42C8A500C0C45F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40FDA6092A42C8A500C0C45F /* SettingsView.swift */,
+				40FDA60A2A42C8A500C0C45F /* ColumnViews.swift */,
+				40FDA60B2A42C8A500C0C45F /* NoImageView.swift */,
+				40FDA60C2A42C8A500C0C45F /* TableView.swift */,
+				40FDA60D2A42C8A500C0C45F /* ContentView.swift */,
+				40FDA60E2A42C8A500C0C45F /* InputAPIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,9 +118,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		403000122A25E7E0001DE935 /* TinyPNG */ = {
+		403000122A25E7E0001DE935 /* Tinifimg */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 403000222A25E7E2001DE935 /* Build configuration list for PBXNativeTarget "TinyPNG" */;
+			buildConfigurationList = 403000222A25E7E2001DE935 /* Build configuration list for PBXNativeTarget "Tinifimg" */;
 			buildPhases = (
 				4030000F2A25E7E0001DE935 /* Sources */,
 				403000102A25E7E0001DE935 /* Frameworks */,
@@ -129,9 +130,9 @@
 			);
 			dependencies = (
 			);
-			name = TinyPNG;
+			name = Tinifimg;
 			productName = TinyPNG;
-			productReference = 403000132A25E7E0001DE935 /* TinyPNG.app */;
+			productReference = 403000132A25E7E0001DE935 /* Tinifimg.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +150,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4030000E2A25E7E0001DE935 /* Build configuration list for PBXProject "TinyPNG" */;
+			buildConfigurationList = 4030000E2A25E7E0001DE935 /* Build configuration list for PBXProject "Tinifimg" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -162,7 +163,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				403000122A25E7E0001DE935 /* TinyPNG */,
+				403000122A25E7E0001DE935 /* Tinifimg */,
 			);
 		};
 /* End PBXProject section */
@@ -172,8 +173,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4030001E2A25E7E2001DE935 /* Preview Assets.xcassets in Resources */,
-				4030001B2A25E7E2001DE935 /* Assets.xcassets in Resources */,
+				40FDA6152A42C8A500C0C45F /* Preview Assets.xcassets in Resources */,
+				40FDA6112A42C8A500C0C45F /* Assets.xcassets in Resources */,
+				40FDA61D2A42C8A500C0C45F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,17 +186,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4093B67A2A3AEC29004AE851 /* ColumnViews.swift in Sources */,
-				403000262A25E82D001DE935 /* SettingsView.swift in Sources */,
-				403000282A25E97B001DE935 /* SettingsStore.swift in Sources */,
-				4093B67C2A3AF814004AE851 /* DataStore.swift in Sources */,
-				4030002A2A25F8D8001DE935 /* ImageProcesser.swift in Sources */,
-				4061CAE72A30680C00890AD0 /* TinyImage.swift in Sources */,
-				403000192A25E7E0001DE935 /* ContentView.swift in Sources */,
-				4093B6782A3AEA32004AE851 /* TableView.swift in Sources */,
-				4093B67E2A3AFC51004AE851 /* InputAPIView.swift in Sources */,
-				4093B6762A3AE1A3004AE851 /* NoImageView.swift in Sources */,
-				403000172A25E7E0001DE935 /* TinyPNGApp.swift in Sources */,
+				40FDA6182A42C8A500C0C45F /* ColumnViews.swift in Sources */,
+				40FDA6192A42C8A500C0C45F /* NoImageView.swift in Sources */,
+				40FDA6172A42C8A500C0C45F /* SettingsView.swift in Sources */,
+				40FDA6122A42C8A500C0C45F /* DataStore.swift in Sources */,
+				40FDA61E2A42C8A500C0C45F /* ImageProcesser.swift in Sources */,
+				40FDA6162A42C8A500C0C45F /* TinifimgApp.swift in Sources */,
+				40FDA61B2A42C8A500C0C45F /* ContentView.swift in Sources */,
+				40FDA61C2A42C8A500C0C45F /* InputAPIView.swift in Sources */,
+				40FDA61A2A42C8A500C0C45F /* TableView.swift in Sources */,
+				40FDA6142A42C8A500C0C45F /* SettingsStore.swift in Sources */,
+				40FDA6132A42C8A500C0C45F /* TinyImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,17 +321,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TinyPNG/TinyPNG.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tinifimg/Tinifimg.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TinyPNG/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tinifimg/Preview Content\"";
 				DEVELOPMENT_TEAM = 89YHB42JY7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TinyPNG/Info.plist;
+				INFOPLIST_FILE = Tinifimg/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -338,7 +340,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.firestudio.TinyPNG;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.firestudio.Tinifimg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -350,17 +352,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TinyPNG/TinyPNG.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tinifimg/Tinifimg.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TinyPNG/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Tinifimg/Preview Content\"";
 				DEVELOPMENT_TEAM = 89YHB42JY7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TinyPNG/Info.plist;
+				INFOPLIST_FILE = Tinifimg/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,7 +371,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.firestudio.TinyPNG;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.firestudio.Tinifimg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -379,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4030000E2A25E7E0001DE935 /* Build configuration list for PBXProject "TinyPNG" */ = {
+		4030000E2A25E7E0001DE935 /* Build configuration list for PBXProject "Tinifimg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				403000202A25E7E2001DE935 /* Debug */,
@@ -388,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		403000222A25E7E2001DE935 /* Build configuration list for PBXNativeTarget "TinyPNG" */ = {
+		403000222A25E7E2001DE935 /* Build configuration list for PBXNativeTarget "Tinifimg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				403000232A25E7E2001DE935 /* Debug */,

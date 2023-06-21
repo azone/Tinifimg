@@ -1,6 +1,6 @@
 //
 //  ImageUploader.swift
-//  TinyPNG
+//  Tinifimg
 //
 //  Created by Logan Wang on 2023/5/30.
 //
@@ -48,7 +48,7 @@ final class ImageProcesser: NSObject, URLSessionDataDelegate, URLSessionDownload
         return .init { continuation in
             continuation.yield(.waiting)
             guard FileManager.default.fileExists(atPath: tinyImage.localURL.path) else {
-                let error = NSError(domain: "cn.firestudio.tinypng", code: -1, userInfo: [
+                let error = NSError(domain: "cn.firestudio.tinifimg", code: -1, userInfo: [
                     NSLocalizedDescriptionKey: "\(tinyImage.localURL) does not exists"
                 ])
                 continuation.yield(.error(error))

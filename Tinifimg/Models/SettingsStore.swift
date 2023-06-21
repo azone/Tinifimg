@@ -1,6 +1,6 @@
 //
 //  SettingsStore.swift
-//  TinyPNG
+//  Tinifimg
 //
 //  Created by Logan Wang on 2023/5/30.
 //
