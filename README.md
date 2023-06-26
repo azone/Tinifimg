@@ -4,7 +4,12 @@ A TinyPNG client for macOS
 ## Requirements
 - macOS 13.0+
 
-## Features
+## Screenshorts
+
+![Main window](./screenshots/main.png)
+![Settings View](./screenshots/settings.png)
+
+## Highlights
 - Drag and drop(import and export)
 - Quicklook preview
 - Check Quota(in settings view)
