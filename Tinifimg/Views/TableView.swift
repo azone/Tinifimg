@@ -13,7 +13,7 @@ let sizeStyle: ByteCountFormatStyle = .byteCount(style: .file)
 struct TableView: View {
     @EnvironmentObject var store: DataStore
 
-    @State private var sorter = [KeyPathComparator(\TinyImage.imageName)]
+    @State private var sorter: [KeyPathComparator<TinyImage>] = []
     @Binding private var selections: Set<TinyImage.ID>
     @State private var quickLookURL: URL?
 
@@ -89,7 +89,6 @@ struct TableView: View {
         }
         .quickLookPreview($quickLookURL, in: selectedURLs)
         .onAppear {
-            sorter = []
             NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
                 if !selections.isEmpty && event.keyCode == 49 {
                     quickLookURL = selectedURLs.first
