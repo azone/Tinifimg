@@ -19,7 +19,6 @@
 		40FDA61A2A42C8A500C0C45F /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA60C2A42C8A500C0C45F /* TableView.swift */; };
 		40FDA61B2A42C8A500C0C45F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA60D2A42C8A500C0C45F /* ContentView.swift */; };
 		40FDA61C2A42C8A500C0C45F /* InputAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA60E2A42C8A500C0C45F /* InputAPIView.swift */; };
-		40FDA61D2A42C8A500C0C45F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40FDA60F2A42C8A500C0C45F /* Info.plist */; };
 		40FDA61E2A42C8A500C0C45F /* ImageProcesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6102A42C8A500C0C45F /* ImageProcesser.swift */; };
 /* End PBXBuildFile section */
 
@@ -143,7 +142,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					403000122A25E7E0001DE935 = {
 						CreatedOnToolsVersion = 14.3;
@@ -175,7 +174,6 @@
 			files = (
 				40FDA6152A42C8A500C0C45F /* Preview Assets.xcassets in Resources */,
 				40FDA6112A42C8A500C0C45F /* Assets.xcassets in Resources */,
-				40FDA61D2A42C8A500C0C45F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,9 +234,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -296,9 +296,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -326,6 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Tinifimg/Preview Content\"";
 				DEVELOPMENT_TEAM = 89YHB42JY7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -357,6 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Tinifimg/Preview Content\"";
 				DEVELOPMENT_TEAM = 89YHB42JY7;
 				ENABLE_HARDENED_RUNTIME = YES;
