@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40CEF73E2A4E91BB000894E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40CEF73C2A4E91BB000894E7 /* Localizable.strings */; };
 		40FDA6112A42C8A500C0C45F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40FDA5FF2A42C8A500C0C45F /* Assets.xcassets */; };
 		40FDA6122A42C8A500C0C45F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6012A42C8A500C0C45F /* DataStore.swift */; };
 		40FDA6132A42C8A500C0C45F /* TinyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6022A42C8A500C0C45F /* TinyImage.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		403000132A25E7E0001DE935 /* Tinifimg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinifimg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40CEF73D2A4E91BB000894E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		40FDA5FF2A42C8A500C0C45F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40FDA6012A42C8A500C0C45F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		40FDA6022A42C8A500C0C45F /* TinyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyImage.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				40FDA6072A42C8A500C0C45F /* TinifimgApp.swift */,
 				40FDA6082A42C8A500C0C45F /* Views */,
 				40FDA60F2A42C8A500C0C45F /* Info.plist */,
+				40CEF73C2A4E91BB000894E7 /* Localizable.strings */,
 				40FDA6102A42C8A500C0C45F /* ImageProcesser.swift */,
 			);
 			path = Tinifimg;
@@ -156,6 +159,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 4030000A2A25E7E0001DE935;
 			productRefGroup = 403000142A25E7E0001DE935 /* Products */;
@@ -173,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40FDA6152A42C8A500C0C45F /* Preview Assets.xcassets in Resources */,
+				40CEF73E2A4E91BB000894E7 /* Localizable.strings in Resources */,
 				40FDA6112A42C8A500C0C45F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,6 +204,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		40CEF73C2A4E91BB000894E7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40CEF73D2A4E91BB000894E7 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		403000202A25E7E2001DE935 /* Debug */ = {
@@ -259,6 +275,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -314,6 +331,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
