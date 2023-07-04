@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import ServiceManagement
 
 final class SettingsStore: ObservableObject {
     @AppStorage("API_TOKEN") var token: String = ""
@@ -14,6 +15,19 @@ final class SettingsStore: ObservableObject {
     @AppStorage("DIRECTORY_TO_SAVE") var directoryToSave: URL?
     @AppStorage("COMPRESSED_COUNT") var compressedCount: Int = 0
     @AppStorage("AUTO_PROCESSING") var autoProcessing: Bool = true
+    @Published var launchAtLogin: Bool = SMAppService.mainApp.status == .enabled {
+        didSet {
+            do {
+                if launchAtLogin {
+                    try SMAppService.mainApp.register()
+                } else {
+                    try SMAppService.mainApp.unregister()
+                }
+            } catch {
+                launchAtLogin = oldValue
+            }
+        }
+    }
 
     static let shared = SettingsStore()
 

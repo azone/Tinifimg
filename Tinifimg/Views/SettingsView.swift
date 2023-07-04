@@ -19,6 +19,7 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
+            Toggle("Launch at Login", isOn: $settings.launchAtLogin)
             TextField("API Key", text: settings.$token)
             LabeledContent("Quota") {
                 VStack(alignment: .leading) {
