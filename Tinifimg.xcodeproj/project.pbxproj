@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40CEF73E2A4E91BB000894E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40CEF73C2A4E91BB000894E7 /* Localizable.strings */; };
+		404BFA6B2B469A9900D6D8A9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 404BFA6A2B469A9900D6D8A9 /* Localizable.xcstrings */; };
 		40FDA6112A42C8A500C0C45F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40FDA5FF2A42C8A500C0C45F /* Assets.xcassets */; };
 		40FDA6122A42C8A500C0C45F /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6012A42C8A500C0C45F /* DataStore.swift */; };
 		40FDA6132A42C8A500C0C45F /* TinyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FDA6022A42C8A500C0C45F /* TinyImage.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		403000132A25E7E0001DE935 /* Tinifimg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinifimg.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		40CEF73D2A4E91BB000894E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		404BFA6A2B469A9900D6D8A9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		40FDA5FF2A42C8A500C0C45F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40FDA6012A42C8A500C0C45F /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		40FDA6022A42C8A500C0C45F /* TinyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyImage.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 				40FDA6072A42C8A500C0C45F /* TinifimgApp.swift */,
 				40FDA6082A42C8A500C0C45F /* Views */,
 				40FDA60F2A42C8A500C0C45F /* Info.plist */,
-				40CEF73C2A4E91BB000894E7 /* Localizable.strings */,
+				404BFA6A2B469A9900D6D8A9 /* Localizable.xcstrings */,
 				40FDA6102A42C8A500C0C45F /* ImageProcesser.swift */,
 			);
 			path = Tinifimg;
@@ -177,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40FDA6152A42C8A500C0C45F /* Preview Assets.xcassets in Resources */,
-				40CEF73E2A4E91BB000894E7 /* Localizable.strings in Resources */,
+				404BFA6B2B469A9900D6D8A9 /* Localizable.xcstrings in Resources */,
 				40FDA6112A42C8A500C0C45F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,17 +204,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		40CEF73C2A4E91BB000894E7 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40CEF73D2A4E91BB000894E7 /* zh-Hans */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		403000202A25E7E2001DE935 /* Debug */ = {
@@ -269,6 +258,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -326,6 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
