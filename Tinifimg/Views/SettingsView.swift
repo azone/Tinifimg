@@ -20,7 +20,12 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Toggle("Launch at Login", isOn: $settings.launchAtLogin)
-            TextField("API Key", text: settings.$token)
+            HStack {
+                TextField("API Key", text: settings.$token)
+                if let url = URL(string: "https://tinify.com/developers") {
+                    HelpLink(destination: url)
+                }
+            }
             LabeledContent("Quota") {
                 VStack(alignment: .leading) {
                     ProgressView(value: Float(settings.compressedCount), total: totalCount)

@@ -65,8 +65,8 @@ struct TableView: View {
                     }
             }
         }
-        .onChange(of: sorter) {
-            store.images.sort(using: $0)
+        .onChange(of: sorter) { _, newValue in
+            store.images.sort(using: newValue)
         }
         .onDeleteCommand {
             store.images.removeAll { selections.contains($0.id) }

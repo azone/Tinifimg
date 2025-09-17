@@ -178,22 +178,22 @@ struct ContentView: View {
                     settings.autoProcessing) &&
                     selections.isEmpty
                 )
+            }
 
-                Group {
-                    if #available(macOS 14, *) {
-                        SettingsLink {
-                            Label("Settings", systemImage: "gear")
-                        }
-                    } else {
-                        Button {
-                            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-                        } label: {
-                            Label("Settings", systemImage: "gear")
-                        }
+            Group {
+                if #available(macOS 14, *) {
+                    SettingsLink {
+                        Label("Settings", systemImage: "gear")
+                    }
+                } else {
+                    Button {
+                        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                    } label: {
+                        Label("Settings", systemImage: "gear")
                     }
                 }
-                .help("Open settings view")
             }
+            .help("Open settings view")
         }
     }
 }

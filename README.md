@@ -2,7 +2,7 @@
 A TinyPNG client for macOS
 
 ## Requirements
-- macOS 13.0+
+- macOS 14.0+
 
 ## Screenshorts
 
